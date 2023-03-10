@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 16:03:52 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/09 17:12:50 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:52:32 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	check_other(t_game *game)
 		j = -1;
 		while (game->map[i][++j] != '\0')
 		{
-			if (game->map[i][j] != '1' && game->map[i][j] != '0' && game->map[i][j]
-			!= 'E' && game->map[i][j] != 'C' && game->map[i][j] != 'P' && game->map[i][j] != 'Z')
+			if (game->map[i][j] != '1' && game->map[i][j]
+				!= '0' && game->map[i][j] != 'E' && game->map[i][j]
+				!= 'C' && game->map[i][j] != 'P' && game->map[i][j] != 'Z')
 				exit_check(game);
 		}
 	}
@@ -52,7 +53,7 @@ void	check_least(t_game *game)
 				game->numb_play++;
 		}
 	}
-	if(game->numb_exit < 1 && game->numb_collect < 1 && game->numb_play < 1)
+	if (game->numb_exit < 1 || game->numb_collect < 1 || game->numb_play < 1)
 		exit_check(game);
 }
 
@@ -87,21 +88,21 @@ void	check_rectangular(t_game *game)
 {
 	int	i;
 	int	lenght;
-	int height;
+	int	height;
 
 	height = 0;
 	i = 1;
 	lenght = ft_strlen(game->map[height]);
-	while(game->map[height])
+	while (game->map[height])
 		height++;
-	while(game->map[i])
+	while (game->map[i])
 	{
-		if((int)ft_strlen(game->map[i]) != lenght)
+		if ((int)ft_strlen(game->map[i]) != lenght)
 			exit_check(game);
 		lenght = ft_strlen(game->map[i]);
 		i++;
 	}
-	if(height == lenght)
+	if (height == lenght)
 		exit_check(game);
 }
 

@@ -6,13 +6,13 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:27:26 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/07 18:28:13 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:28:30 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void print_image(t_game game, void *i, int x, int y)
+void	print_image(t_game game, void *i, int x, int y)
 {
 	mlx_put_image_to_window(game.mlx, game.mlx_win, i, x, y);
 }
@@ -27,7 +27,7 @@ void	*build_img(void *mlx, char *path)
 	return (img);
 }
 
-t_game image_buffer(t_game game)
+t_game	image_buffer(t_game game)
 {
 	game.x = 0;
 	game.y = 0;
@@ -39,4 +39,3 @@ t_game image_buffer(t_game game)
 	game.enemy_img = build_img(game.mlx, "./images/ENEMY_1.xpm");
 	return (game);
 }
-

@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:47:00 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 17:02:08 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:43:37 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-//# include "./minilibx-linux/mlx.h"  //LINUX
 # include "./mlx/mlx.h"
 # include "./libft/libft.h"
-
 
 typedef struct s_data {
 	char	**map;
@@ -45,7 +43,6 @@ typedef struct s_data {
 	int		end_game;
 }				t_game;
 
-
 # define ESC 53
 # define Q 12
 # define W 13
@@ -59,24 +56,6 @@ typedef struct s_data {
 # define FIRST 15
 # define SECOND 30
 # define THIRD 50
-
-
-
-/*# define ESC 9
-# define Q 24
-# define W 25
-# define A 38
-# define S 39
-# define D 40
-# define UP 111
-# define DOWN 116
-# define LEFT 113
-# define RIGHT 114
-# define FIRST 300
-# define SECOND 600
-# define THIRD 900
-*/
-
 
 void	mapbuild(char *path, t_game *game);
 void	check_map(t_game *game);
@@ -94,9 +73,11 @@ void	print_map(t_game *game);
 void	count_collectible(t_game *game);
 void	exit_status(t_game *game);
 void	print_frame(t_game *game);
-void	exit_check();
+void	exit_check(t_game *game);
 void	print_moves(t_game *game);
 void	exit_died(t_game *game);
 int		cross_exit(t_game *game);
 void	free_map(t_game *game);
+void	print_collect_exit_enemy(t_game *game);
+void	you_win(t_game *game);
 #endif

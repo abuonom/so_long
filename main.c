@@ -6,13 +6,13 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:46:50 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 16:57:36 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:50:26 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void mapbuild(char *path, t_game *game)
+void	mapbuild(char *path, t_game *game)
 {
 	int		fd;
 	char	*map_str;
@@ -30,11 +30,13 @@ void mapbuild(char *path, t_game *game)
 	close(fd);
 }
 
-int check_ber(char *path)
+int	check_ber(char *path)
 {
-	int i;
+	int	i;
+
 	i = ft_strlen(path);
-	if(path[i - 1] != 'r' || path[i - 2] != 'e' || path[i - 3] != 'b' || path[i - 4] != '.')
+	if (path[i - 1] != 'r' || path[i - 2] != 'e'
+		|| path[i - 3] != 'b' || path[i - 4] != '.')
 		return (1);
 	return (0);
 }
@@ -52,11 +54,15 @@ static void	window_size(t_game *game)
 
 int	main(int argc, char **argv)
 {
-	if(argc < 2 || check_ber(argv[1]) == 1)
+	t_game	game;
+
+	if (argc < 2 || check_ber(argv[1]) == 1)
+	{
+		ft_putstr("File non valido");
 		return (1);
-	t_game game;
+	}
 	game.mlx = mlx_init();
-	mapbuild(argv[1],&game);
+	mapbuild(argv[1], &game);
 	window_size(&game);
 	game.mlx_win = mlx_new_window(game.mlx, game.winw, game.winh, "So Long");
 	init_map(&game);

@@ -28,4 +28,3 @@ char	*ft_strchr(char *s, int c)
 	}
 	return (0);
 }
-

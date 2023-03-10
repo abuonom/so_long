@@ -6,28 +6,28 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:51:04 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 15:11:48 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:26:48 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void choose_frame(t_game *game)
+void	choose_frame(t_game *game)
 {
-	if(game->enemy_frame <= FIRST)
+	if (game->enemy_frame <= FIRST)
 		game->enemy_img = build_img(game->mlx, "./images/ENEMY_1.xpm");
-	if(game->enemy_frame <= SECOND && game->enemy_frame >= FIRST)
+	if (game->enemy_frame <= SECOND && game->enemy_frame >= FIRST)
 		game->enemy_img = build_img(game->mlx, "./images/ENEMY_2.xpm");
-	if(game->enemy_frame <= THIRD && game->enemy_frame >= SECOND)
+	if (game->enemy_frame <= THIRD && game->enemy_frame >= SECOND)
 		game->enemy_img = build_img(game->mlx, "./images/ENEMY_3.xpm");
-	if(game->enemy_frame == THIRD + 30)
+	if (game->enemy_frame == THIRD + 30)
 		game->enemy_frame = 1;
 }
 
-void print_frame(t_game *game)
+void	print_frame(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	game->enemy_frame++;
@@ -38,7 +38,7 @@ void print_frame(t_game *game)
 		game->x = 0;
 		while (game->map[i][++j] != '\0')
 		{
-			if(game->map[i][j] == 'Z')
+			if (game->map[i][j] == 'Z')
 				print_image(*game, game->enemy_img, game->x, game->y);
 			game->x += 64;
 		}
