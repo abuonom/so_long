@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:47:00 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 17:43:37 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:30:41 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_data {
 	int		numb_collect;
 	int		numb_exit;
 	int		enemy_frame;
+	int		collect_frame;
 	int		moves;
 	int		end_game;
 }				t_game;

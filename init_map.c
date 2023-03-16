@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 17:46:50 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 17:37:17 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:58:07 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,8 @@ void	print_collect_exit_enemy(t_game *game)
 		game->x = 0;
 		while (game->map[i][++j] != '\0')
 		{
-			if (game->map[i][j] == 'C')
-				print_image(*game, game->collect_img, game->x, game->y);
 			if (game->map[i][j] == 'E')
 				print_image_exit(game);
-			if (game->map[i][j] == 'Z')
-				print_image(*game, game->enemy_img, game->x, game->y);
 			game->x += 64;
 		}
 		game->y += 64;

@@ -6,7 +6,7 @@
 #    By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 15:36:03 by abuonomo          #+#    #+#              #
-#    Updated: 2023/02/27 16:14:46 by abuonomo         ###   ########.fr        #
+#    Updated: 2023/03/16 15:07:00 by abuonomo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,20 +33,20 @@ RM = rm -f
 FLAGS = -Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${FLAGS} -g -c $< -o ${<:.c=.o}
+		@${CC} ${FLAGS} -g -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
-		ar rcs ${NAME} ${OBJS}
+		@ar rcs ${NAME} ${OBJS}
 
 bonus: ${OBJSBONUS}
-		ar rcs ${NAME} ${OBJSBONUS}
+		@ar rcs ${NAME} ${OBJSBONUS}
 
 all: ${NAME}
 
 clean:
-		${RM} ${OBJS} ${OBJSBONUS}
+		@${RM} ${OBJS} ${OBJSBONUS}
 
 fclean: clean
-		${RM} ${NAME}
+		@${RM} ${NAME}
 
 re: fclean all

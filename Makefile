@@ -6,7 +6,7 @@
 #    By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 19:15:40 by abuonomo          #+#    #+#              #
-#    Updated: 2023/03/10 16:53:50 by abuonomo         ###   ########.fr        #
+#    Updated: 2023/03/16 15:10:12 by abuonomo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ CFLAGS			=	-Wall -Wextra -Werror
 MLX_FLAGS		=	-Lmlx -lmlx -framework OpenGL -framework AppKit
 
 %.o: %.c
-	$(CC) ${CFLAGS} -Imlx -c $< -o $@
+	@$(CC) ${CFLAGS} -Imlx -c $< -o $@
 
 all:			$(NAME)
 
@@ -58,14 +58,14 @@ $(LIBFT):
 				make -C $(LIBFT_PATH)
 
 clean:
-				${RM} ${OBJECTS}
-				make clean -C ${LIBFT_PATH}
-				make clean -C ${MINILIBX_PATH}
+				@${RM} ${OBJECTS}
+				@make clean -C ${LIBFT_PATH}
+				@make clean -C ${MINILIBX_PATH}
 
 fclean:			clean
-					rm -f $(NAME)
-					rm -f $(MINILIBX)
-					rm -f $(LIBFT)
+					@rm -f $(NAME)
+					@rm -f $(MINILIBX)
+					@rm -f $(LIBFT)
 
 re:				fclean all
 

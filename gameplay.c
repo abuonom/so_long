@@ -6,13 +6,13 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:12:27 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 17:28:06 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:34:32 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	animation_loop(t_game *game)
+int	animation_loop_enemy(t_game *game)
 {
 	print_frame(game);
 	return (0);
@@ -41,6 +41,6 @@ void	gameplay(t_game *game)
 	game->end_game = 0;
 	mlx_hook(game->mlx_win, 2, 1L << 0, key_pressed, game);
 	mlx_hook(game->mlx_win, 17, 1L << 17, cross_exit, game);
-	mlx_loop_hook(game->mlx, animation_loop, game);
+	mlx_loop_hook(game->mlx, animation_loop_enemy, game);
 	mlx_loop(game->mlx);
 }

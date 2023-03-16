@@ -6,7 +6,7 @@
 /*   By: abuonomo <abuonomo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 18:27:26 by abuonomo          #+#    #+#             */
-/*   Updated: 2023/03/10 17:28:30 by abuonomo         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:40:12 by abuonomo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_game	image_buffer(t_game game)
 	game.y = 0;
 	game.wall_img = build_img(game.mlx, "./images/WALL_1.xpm");
 	game.back_img = build_img(game.mlx, "./images/BACK.xpm");
-	game.collect_img = build_img(game.mlx, "./images/COLLECT.xpm");
+	game.collect_img = build_img(game.mlx, "./images/COLLECT 0.xpm");
 	game.player_img = build_img(game.mlx, "./images/START.xpm");
 	game.exit_img = build_img(game.mlx, "./images/EXIT_NO.xpm");
 	game.enemy_img = build_img(game.mlx, "./images/ENEMY_1.xpm");
